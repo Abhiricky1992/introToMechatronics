@@ -278,7 +278,7 @@ h0v1blockPosPlot.data = [{ // Pos vs time
     },
 }, { // Set-point
     x: [0, 0], // x axis data
-    y: [Math.PI / 2, Math.PI / 2], // y axis data
+    y: [0, 0], // y axis data
     mode: 'lines',
     line: {
         dash: 'dashdot',
