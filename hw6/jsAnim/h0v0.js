@@ -133,8 +133,8 @@ h0v0blockAnim.dt = 0.016;
 h0v0blockAnim.blockXCoords = [0, 0, 1, 1, 0];
 h0v0blockAnim.blockYCoords = [0, 1, 1, 0, 0];
 h0v0blockAnim.data = [{ // Floor
-    x: [0, 7], // x axis data
-    y: [0, 7 * Math.tan(Math.PI / 6)], // y axis data
+    x: [0, 9], // x axis data
+    y: [0, 9 * Math.tan(Math.PI / 6)], // y axis data
     mode: 'lines',
     line: {
         simplify: false,
