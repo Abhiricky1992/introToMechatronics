@@ -119,7 +119,7 @@ h0v1blockAnim.g = 9.8;
 h0v1blockAnim.l = 12;
 h0v1blockAnim.x = -Math.PI;
 h0v1blockAnim.xd = 0;
-h0v1blockAnim.xDes = Math.PI / 2;
+h0v1blockAnim.xDes = 0;
 h0v1blockAnim.xdDes = 0;
 h0v1blockAnim.kp = 0;
 h0v1blockAnim.kd = 0;
@@ -208,7 +208,7 @@ h0v1blockAnim.der = function (t, x) {
     return dx;
 };
 h0v1blockAnim.init = function () {
-    this.x = -Math.PI; this.xd = 0; this.xDes = Math.PI / 2; this.xdDes = 0;
+    this.x = -Math.PI; this.xd = 0; this.xDes = 0; this.xdDes = 0;
     this.xErr = this.xDes - this.x; this.xErrInt = 0;
     this.kp = 0; this.kd = 0; this.ki = 0;
     this.pControlVal = 0; this.dControlVal = 0;
