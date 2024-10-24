@@ -185,7 +185,7 @@ h0v0blockAnim.layout = {
         showticklabels: false,
         scaleanchor: "x",
         scaleratio: 1,
-        range: [-0.05, 4.5],
+        range: [-0.05, 5.5],
         tickfont: { family: 'Garamond,serif', size: 20, color: 'white' },
     },
     paper_bgcolor: '#ffffff00',
