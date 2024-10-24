@@ -2,11 +2,11 @@ let h0v0throttleVal = new anim('h0v0throttleVal');
 h0v0throttleVal.throttleVal = 0;
 h0v0throttleVal.init = function () {
     this.throttleVal = 0;
-    this.elem.innerHTML = this.throttleVal.toFixed(5);
+    this.elem.innerHTML = this.throttleVal.toFixed(6);
 };
 h0v0throttleVal.update = function () {
     this.throttleVal = h0v0blockAnim.throttleVal;
-    this.elem.innerHTML = this.throttleVal.toFixed(5);
+    this.elem.innerHTML = this.throttleVal.toFixed(6);
 };
 h0v0throttleVal.reset = function () {
     this.init();
@@ -15,14 +15,14 @@ h0v0throttleVal.reset = function () {
 
 
 let h0v0xErr = new anim('h0v0xErr');
-h0v0xErr.xErr = 5 / Math.cos(Math.PI / 6);
+h0v0xErr.xErr = 6 / Math.cos(Math.PI / 6);
 h0v0xErr.init = function () {
-    this.xErr = 5 / Math.cos(Math.PI / 6);
-    this.elem.innerHTML = this.xErr.toFixed(5);
+    this.xErr = 6 / Math.cos(Math.PI / 6);
+    this.elem.innerHTML = this.xErr.toFixed(6);
 };
 h0v0xErr.update = function () {
     this.xErr = h0v0blockAnim.xErr;
-    this.elem.innerHTML = this.xErr.toFixed(5);
+    this.elem.innerHTML = this.xErr.toFixed(6);
 };
 h0v0xErr.reset = function () {
     this.init();
@@ -46,11 +46,11 @@ let h0v0pControlVal = new anim('h0v0pControlVal')
 h0v0pControlVal.pControlVal = 0;
 h0v0pControlVal.init = function () {
     this.pControlVal = 0;
-    this.elem.innerHTML = this.pControlVal.toFixed(5);
+    this.elem.innerHTML = this.pControlVal.toFixed(6);
 };
 h0v0pControlVal.update = function () {
     this.pControlVal = h0v0blockAnim.pControlVal;
-    this.elem.innerHTML = this.pControlVal.toFixed(5);
+    this.elem.innerHTML = this.pControlVal.toFixed(6);
 };
 h0v0pControlVal.reset = function () {
     this.init();
@@ -74,11 +74,11 @@ let h0v0dControlVal = new anim('h0v0dControlVal')
 h0v0dControlVal.dControlVal = 0;
 h0v0dControlVal.init = function () {
     this.dControlVal = 0;
-    this.elem.innerHTML = this.dControlVal.toFixed(5);
+    this.elem.innerHTML = this.dControlVal.toFixed(6);
 };
 h0v0dControlVal.update = function () {
     this.dControlVal = h0v0blockAnim.dControlVal;
-    this.elem.innerHTML = this.dControlVal.toFixed(5);
+    this.elem.innerHTML = this.dControlVal.toFixed(6);
 };
 h0v0dControlVal.reset = function () {
     this.init();
@@ -102,11 +102,11 @@ let h0v0iControlVal = new anim('h0v0iControlVal')
 h0v0iControlVal.iControlVal = 0;
 h0v0iControlVal.init = function () {
     this.iControlVal = 0;
-    this.elem.innerHTML = this.iControlVal.toFixed(5);
+    this.elem.innerHTML = this.iControlVal.toFixed(6);
 };
 h0v0iControlVal.update = function () {
     this.iControlVal = h0v0blockAnim.iControlVal;
-    this.elem.innerHTML = this.iControlVal.toFixed(5);
+    this.elem.innerHTML = this.iControlVal.toFixed(6);
 };
 h0v0iControlVal.reset = function () {
     this.init();
@@ -119,7 +119,7 @@ h0v0blockAnim.g = 9.8;
 h0v0blockAnim.slopeAng = Math.PI / 6;
 h0v0blockAnim.x = 0;
 h0v0blockAnim.xd = 0;
-h0v0blockAnim.xDes = 5 / h0v0blockAnim.slopeAng;
+h0v0blockAnim.xDes = 6 / h0v0blockAnim.slopeAng;
 h0v0blockAnim.xdDes = 0;
 h0v0blockAnim.kp = 0;
 h0v0blockAnim.kd = 0;
@@ -185,7 +185,7 @@ h0v0blockAnim.layout = {
         showticklabels: false,
         scaleanchor: "x",
         scaleratio: 1,
-        range: [-0.05, 5.5],
+        range: [-0.05, 4.5],
         tickfont: { family: 'Garamond,serif', size: 20, color: 'white' },
     },
     paper_bgcolor: '#ffffff00',
@@ -199,7 +199,7 @@ h0v0blockAnim.config = {
 };
 h0v0blockAnim.der = function (t, x) { // Function to compute state derivatives
     dx = math.zeros(3, 1);
-    this.xDes = 5 / Math.cos(Math.PI / 6) + Math.sin(2 * Math.PI * 0.5 * t);
+    this.xDes = 6 / Math.cos(Math.PI / 6) + Math.sin(2 * Math.PI * 0.5 * t);
     this.xdDes = Math.cos(2 * Math.PI * 0.5 * t);
     this.xErr = this.xDes - x.get([0, 0]);
     this.pControlVal = this.kp * this.xErr;
@@ -212,7 +212,7 @@ h0v0blockAnim.der = function (t, x) { // Function to compute state derivatives
     return dx;
 };
 h0v0blockAnim.init = function () {
-    this.x = 0; this.xd = 0; this.xDes = 5 / Math.cos(Math.PI / 6); this.xdDes = 0;
+    this.x = 0; this.xd = 0; this.xDes = 6 / Math.cos(Math.PI / 6); this.xdDes = 0;
     this.xErr = this.xDes - this.x; this.xErrInt = 0;
     this.kp = 0; this.kd = 0; this.ki = 0;
     this.pControlVal = 0; this.dControlVal = 0;
@@ -258,7 +258,7 @@ h0v0blockAnim.update = function (tAnim, dtAnim) {
         this.data[1].y[i] = (this.x + this.blockXCoords[i]) * Math.sin(this.slopeAng) + (this.blockYCoords[i]) * Math.cos(this.slopeAng);
     }
 
-    this.xDes = 5 / Math.cos(Math.PI / 6) + Math.sin(2 * Math.PI * 0.5 * T);
+    this.xDes = 6 / Math.cos(Math.PI / 6) + Math.sin(2 * Math.PI * 0.5 * T);
     for (let i = 0; i < this.data[2].x.length; ++i) {
         this.data[2].x[i] = (this.xDes + this.blockXCoords[i]) * Math.cos(this.slopeAng) - (this.blockYCoords[i]) * Math.sin(this.slopeAng);
         this.data[2].y[i] = (this.xDes + this.blockXCoords[i]) * Math.sin(this.slopeAng) + (this.blockYCoords[i]) * Math.cos(this.slopeAng);
@@ -283,7 +283,7 @@ h0v0blockPosPlot.data = [{ // Pos vs time
     },
 }, { // Set-point
     x: [0], // x axis data
-    y: [5 / Math.cos(Math.PI / 6)], // y axis data
+    y: [6 / Math.cos(Math.PI / 6)], // y axis data
     mode: 'lines',
     line: {
         dash: 'dashdot',
@@ -350,7 +350,7 @@ h0v0blockPosPlot.reset = function () {
     this.data[0].x = [0];
     this.data[0].y = [0];
     this.data[1].x = [0];
-    this.data[1].y = [5 / Math.cos(Math.PI / 6)];
+    this.data[1].y = [6 / Math.cos(Math.PI / 6)];
     Plotly.purge(this.id);
     this.init();
 };
